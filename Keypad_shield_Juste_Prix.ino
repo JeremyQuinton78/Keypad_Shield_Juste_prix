@@ -25,7 +25,7 @@ int read_LCD_buttons()
 int marge = 1000 ;
 int i = int(marge / 2) ;
 int nombreDeCoups = 15 ;
-int secret = random(1, marge);
+int secret = 0 ;
 
 void setup() {
   randomSeed(analogRead(5));
@@ -39,9 +39,11 @@ void setup() {
   lcd.print("En 15 essais") ;
    delay(1750);
   lcd.clear() ;
+  secret = random(1, marge);
 }
 
 void loop() {
+
   while (nombreDeCoups != 0) {
     
     lcd.setCursor(0, 0) ;
